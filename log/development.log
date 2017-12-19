@@ -25316,3 +25316,70 @@ Processing by Admin::RestaurantsController#index as HTML
 Completed 200 OK in 280ms (Views: 222.0ms | ActiveRecord: 3.5ms)
 
 
+Started GET "/admin/restaurants" for 127.0.0.1 at 2017-12-19 22:42:36 +0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::RestaurantsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (2.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered admin/restaurants/index.html.erb within layouts/application (201.6ms)
+Completed 200 OK in 1054ms (Views: 980.3ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2017-12-19 22:42:38 +0800
+  
+SyntaxError (/home/student/restaurant_forum/app/controllers/admin/categories_controller.rb:22: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/admin/categories_controller.rb:22: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/admin/categories" for 127.0.0.1 at 2017-12-19 22:43:14 +0800
+Processing by Admin::CategoriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered admin/categories/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 301ms (Views: 190.2ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2017-12-19 22:43:36 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u3kZHK5zMgfDZKY0KkQLWwB3hJ7YXrhmig1c2HlQ65lH5FTQ6yo05Xy0wjWy6T/pzQ5VK/ssQJPGmhAsiqKiEg==", "category"=>{"name"=>"俄羅斯料理"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "俄羅斯料理"], ["created_at", "2017-12-19 14:43:36.108107"], ["updated_at", "2017-12-19 14:43:36.108107"]]
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 100ms (ActiveRecord: 23.6ms)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2017-12-19 22:43:36 +0800
+Processing by Admin::CategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered admin/categories/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 147ms (Views: 140.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2017-12-19 22:43:39 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dEgI5xN639L8zZl5npVTYjt2V4Pj+hexbWnnLy09J7uI1UUrViPZMEMd/XgGOGfQ9g+GNsCI70Qh/qvb3s9uMA==", "category"=>{"name"=>""}, "commit"=>"Create Category"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered admin/categories/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 147ms (Views: 118.5ms | ActiveRecord: 2.1ms)
+
+
