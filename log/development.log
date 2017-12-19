@@ -25383,3 +25383,25 @@ Processing by Admin::CategoriesController#create as HTML
 Completed 200 OK in 147ms (Views: 118.5ms | ActiveRecord: 2.1ms)
 
 
+Started GET "/admin/categories" for 127.0.0.1 at 2017-12-20 00:44:04 +0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::CategoriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered admin/categories/index.html.erb within layouts/application (57.7ms)
+Completed 200 OK in 1318ms (Views: 1210.9ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2017-12-20 00:44:07 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0rqofqbB062zJ1QYwWB/bbrTF8I4SsRx6WsTJder/msuJ+Wy45jVTwz3MBlZzUvfd6rGdxs4PISl/F/RJFm34A==", "category"=>{"name"=>""}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered admin/categories/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 228ms (Views: 211.7ms | ActiveRecord: 1.7ms)
+
+
