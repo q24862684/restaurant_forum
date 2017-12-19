@@ -1,5 +1,6 @@
 namespace :dev do
-  task :fake => :environment do
+
+  task fake: :environment do
     Restaurant.destroy_all
 
     500.times do |i|
