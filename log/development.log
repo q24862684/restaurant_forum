@@ -26078,3 +26078,100 @@ Processing by CategoriesController#show as HTML
 Completed 200 OK in 1326ms (Views: 1255.2ms | ActiveRecord: 11.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-12-27 00:15:03 +0800
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RestaurantsController#index as HTML
+Completed 401 Unauthorized in 130ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-12-27 00:15:04 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (22.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (287.7ms)
+Completed 200 OK in 4801ms (Views: 4439.7ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-12-27 00:15:17 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NtnQrgIIXnrf0AVPv/ARq4UJKJPxwwhRUna/6QcqSymIUh1ujWO4lo4Kr1vNhXJFka7wUbrNFdXszc3w5IjO2Q==", "user"=>{"email"=>"q24862684@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "q24862684@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.8ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-12-26 16:15:18.272973"], ["last_sign_in_at", "2017-12-24 14:24:20.523685"], ["sign_in_count", 15], ["updated_at", "2017-12-26 16:15:18.291592"], ["id", 1]]
+  [1m[35m (21.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1122ms (ActiveRecord: 38.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-27 00:15:18 +0800
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mCategory Load (3.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mRestaurant Load (2.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" LIMIT ? OFFSET ?[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  [1m[36mCategory Load (2.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered shared/_restaurant_list.html.erb (536.1ms)
+  Rendered restaurants/index.html.erb within layouts/application (699.5ms)
+Completed 200 OK in 1883ms (Views: 1597.3ms | ActiveRecord: 30.7ms)
+
+
+Started GET "/restaurants/2505" for 127.0.0.1 at 2017-12-27 00:15:27 +0800
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2505"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (31.9ms)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <div class="container">
+    2:   <div class="row">
+    3:     <div class="col-md-12">
+    4:       <h1><%= @restaurant.name %></h1>
+    5:       <p>[<%= @restaurant.category.name %>]</p>
+    6:     </div>
+    7: 
+  
+app/views/restaurants/show.html.erb:4:in `_app_views_restaurants_show_html_erb__2099547775620504010_69844191920520'
+Started GET "/restaurants/2505" for 127.0.0.1 at 2017-12-27 00:23:07 +0800
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2505"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (29.1ms)
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <div class="container">
+    2:   <div class="row">
+    3:     <div class="col-md-12">
+    4:       <h1><%= @restaurant.name %></h1>
+    5:       <p>[<%= @restaurant.category.name %>]</p>
+    6:     </div>
+    7: 
+  
+app/views/restaurants/show.html.erb:4:in `_app_views_restaurants_show_html_erb__2099547775620504010_69844306784200'
+Started GET "/restaurants/2505" for 127.0.0.1 at 2017-12-27 00:24:02 +0800
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2505"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (2.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2505], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered restaurants/show.html.erb within layouts/application (206.2ms)
+Completed 200 OK in 1292ms (Views: 786.4ms | ActiveRecord: 33.2ms)
+
+
