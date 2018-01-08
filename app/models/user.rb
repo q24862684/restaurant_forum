@@ -9,5 +9,11 @@ class User < ApplicationRecord
   end
   has_many :comments
 
+  before_save :initialize_name
+  def initialize_name
+    if self.name == '' || self.name == nil
+      self.name = self.email.split('@').first
+    end
+  end
 
 end
