@@ -7,10 +7,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:notice] = "user was successfully updated"
+      flash[:notice] = "User was successfully updated"
       redirect_to user_path(@user)
     else
-      flash.now[:alert] = "restaurant was failed to update"
+      flash.now[:alert] = "User was failed to update"
       render :edit
     end
   end
@@ -21,6 +21,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name,:intro)
+    params.require(:user).permit(:name,:intro,:avatar)
   end
 end
