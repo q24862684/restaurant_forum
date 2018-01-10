@@ -31,10 +31,10 @@
       <%= link_to restaurant_path(restaurant) do %>
           <div class="my-restaurant">
             <div>
-              <%= image_tag restaurant.image, class: "img-responsive center-block" %>
+              <%= image_tag restaurant.image %>
             </div>
-              <%= restaurant.name %>
-          </div>
+              <h4><%= restaurant.name %></h4>
+          </div>  
       <% end %>
       <% end %>
     </div>
