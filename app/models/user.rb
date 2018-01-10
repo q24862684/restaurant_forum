@@ -7,6 +7,7 @@ class User < ApplicationRecord
   def admin?
     self.role == "admin"
   end
+
   has_many :comments
 
   before_save :initialize_name
@@ -15,5 +16,7 @@ class User < ApplicationRecord
       self.name = self.email.split('@').first
     end
   end
+
+  has_many :restaurants, through: :comments
 
 end

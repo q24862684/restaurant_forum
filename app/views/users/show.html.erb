@@ -19,3 +19,19 @@
     <div class="clearfix"></div>
   </div>
 </div>
+
+<div class="container">
+  <br>
+  <h4>30個已評論餐廳</h4>
+  <br>
+    <% @commented_restaurants.uniq.each do |restaurant| %>
+      <div clsaa="my-restaurant">
+        <div class="panel panel-default">
+          <div class="panel-heading"><%= image_tag restaurant.image, class: "img-responsive center-block" %></div>
+          <div class="panel-body">
+            <%= restaurant.name %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
