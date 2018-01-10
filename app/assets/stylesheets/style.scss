@@ -23,11 +23,22 @@
 .restaurant-item .caption {
   padding: 10px;
 }
+
 .edit_user img {
   width: 50px;
   margin: 10px;
 }
+
+.my-restaurant {
+  display: inline-block;
+  text-align: center;
+}
+
+.my-restaurant > div{
+  height: 60px;
+
+}
 .my-restaurant img {
-  max-height: 50px;
-  width: 30%
+  max-height: 100%;
+  width:auto;
 }

@@ -22,16 +22,21 @@
 
 <div class="container">
   <br>
-  <h4>30個已評論餐廳</h4>
-  <br>
-    <% @commented_restaurants.uniq.each do |restaurant| %>
-      <div clsaa="my-restaurant">
-        <div class="panel panel-default">
-          <div class="panel-heading"><%= image_tag restaurant.image, class: "img-responsive center-block" %></div>
-          <div class="panel-body">
-            <%= restaurant.name %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">30個已評論餐廳</h3>
+    </div>
+    <div class="panel-body">
+      <% @commented_restaurants.uniq.each do |restaurant| %>
+      <%= link_to restaurant_path(restaurant) do %>
+          <div class="my-restaurant">
+            <div>
+              <%= image_tag restaurant.image, class: "img-responsive center-block" %>
+            </div>
+              <%= restaurant.name %>
           </div>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+      <% end %>
+    </div>
   </div>
+</div>
