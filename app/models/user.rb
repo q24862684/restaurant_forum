@@ -17,6 +17,6 @@ class User < ApplicationRecord
     end
   end
 
-  has_many :restaurants, through: :comments
+  has_many :restaurants, through: :comments,dependent: :restrict_with_error
 
 end
