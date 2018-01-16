@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     member do
       get :dashborad
     end
-   end
+    member do
+      post :favorite
+      post :unfavorite
+    end
+  end
   resources :categories, only: :show
   root "restaurants#index"
 
