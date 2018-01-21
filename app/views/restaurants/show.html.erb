@@ -20,6 +20,7 @@
       <%= simple_format @restaurant.description %>
       <hr>
       <%= render partial: "shared/favorite", locals: {restaurant: @restaurant} %>
+      <%= render partial: "shared/like", locals: {restaurant: @restaurant} %>
     </div>
 
     <div class="clearfix"></div>
