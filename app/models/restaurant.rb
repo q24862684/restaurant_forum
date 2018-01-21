@@ -8,4 +8,6 @@ class Restaurant < ApplicationRecord
   def is_favorited?(user)
     self.favorited_users.include?(user)
   end
+  has_many :likes, dependent: :destroy
+  has_many :liked_users, through: :likes, source: :user
 end
