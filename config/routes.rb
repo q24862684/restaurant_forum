@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       get :feeds
     end
     member do
-      get :dashborad
+      get :dashboard
     end
     member do
       post :favorite
